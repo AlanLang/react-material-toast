@@ -1,0 +1,41 @@
+{
+  "name": "react-material-toast",
+  "version": "0.0.1",
+  "description": "an toast component for react",
+  "homepage": "https://react-material-toast.netlify.com",
+  "repository": "https://github.com/AlanLang/react-material-toast.git",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development",
+    "deploy": "babel src -d dist --copy-files",
+    "build": "webpack --mode production",
+    "publish": "npm run deploy && npm publish"
+  },
+  "author": "Alan<langwdalan@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "material ui",
+    "toast"
+  ],
+  "peerDependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
