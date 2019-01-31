@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div>
       <button onClick={onClick} >测试</button>
-      <Toast></Toast>
+      <Toast type="success"></Toast>
     </div>
   )
 }

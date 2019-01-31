@@ -1,0 +1,16 @@
+.rc-notification > span{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 99999;
+  top:0px;
+}
+@media (min-width: 960px) {
+  .rc-notification > span{
+    top: 24px;
+    left: auto;
+    right: 24px;
+    justify-content: flex-end;
+  }
+}

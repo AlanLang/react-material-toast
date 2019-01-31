@@ -1,9 +1,53 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {CloseIcon, SussesIcon} from './Icon'
+
+class Toast extends Component{
+  constructor (props) {
+    super(props)
+    this.state = {
+        // 接收传递的值
+        imgSrc: props.imgSrc
+    }
+  }
+  render(){
+    const { type } = this.props;
+    console.log('%ctype: ','color: MidnightBlue; background: Aquamarine;',type);
+    return (
+      <ToastGroup>
+        <ToastConent>
+          <Message>
+            <MessageSpan><SussesIcon></SussesIcon>Hello World</MessageSpan>
+          </Message>
+          <CloseContent>
+            <ClostButton>
+              <CloseIcon></CloseIcon>
+            </ClostButton>
+          </CloseContent>
+        </ToastConent>
+      </ToastGroup>
+    )
+  }
+}
+
+Toast.propTypes = {
+  type: PropTypes.oneOf(['success', 'error', 'info', 'warning']),
+};
+
+export default Toast;
+
+
 const ToastGroup = styled.div`
+  /* left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1400;
+  position: fixed; */
+  margin-bottom:12px;
+  display: flex;
+  flex-direction:row;
   justify-content: center;
-  display:flex;
   @media (min-width: 960px){
     top: 24px;
     left: auto;
@@ -35,6 +79,16 @@ const ToastConent = styled.div`
     flex-grow: 1;
   }
 `
+
+const getColor = (type) => {
+  console.log('%ctype: ','color: MidnightBlue; background: Aquamarine;',type);
+  switch(type){
+    case 'success':
+      return '#43a047';
+    default:
+      return 'red';
+  }
+}
 
 const Message = styled.div`
   padding: 8px 0;
@@ -82,25 +136,3 @@ const ClostButton = styled.div`
     background-color: rgba(0, 0, 0, 0.08);
   }
 `
-
-class Toast extends Component{
-  render(){
-    return (
-      <ToastGroup>
-        <ToastConent>
-          <Message>
-            <MessageSpan><SussesIcon></SussesIcon>Hello World</MessageSpan>
-          </Message>
-          <CloseContent>
-            <ClostButton>
-              <CloseIcon></CloseIcon>
-            </ClostButton>
-          </CloseContent>
-        </ToastConent>
-      </ToastGroup>
-    )
-  }
-}
-
-
-export default Toast;
