@@ -6,8 +6,7 @@
   "repository": "https://github.com/AlanLang/react-material-toast.git",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode development --open",
     "deploy": "babel src -d dist --copy-files",
     "build": "webpack --mode production",
     "publish": "npm run deploy && npm publish"
@@ -37,5 +36,8 @@
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "rc-notification": "^3.3.0"
   }
 }
