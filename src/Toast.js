@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {CloseIcon, SussesIcon} from './Icon'
+import {CloseIcon, TypeIcon} from './Icon'
 
 class Toast extends Component{
   constructor (props) {
     super(props)
     this.state = {
-        // 接收传递的值
-        imgSrc: props.imgSrc
+
     }
   }
+  
   render(){
-    const { type } = this.props;
-    console.log('%ctype: ','color: MidnightBlue; background: Aquamarine;',type);
+    const { type, children } = this.props;
+
     return (
       <ToastGroup>
-        <ToastConent>
+        <ToastConent type={type}>
           <Message>
-            <MessageSpan><SussesIcon></SussesIcon>Hello World</MessageSpan>
+            <MessageSpan>
+              <TypeIcon type={type}></TypeIcon>
+              {children}
+            </MessageSpan>
           </Message>
           <CloseContent>
             <ClostButton>
@@ -39,11 +42,6 @@ export default Toast;
 
 
 const ToastGroup = styled.div`
-  /* left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1400;
-  position: fixed; */
   margin-bottom:12px;
   display: flex;
   flex-direction:row;
@@ -65,7 +63,7 @@ const ToastConent = styled.div`
   padding: 6px 24px;
   flex-wrap: wrap;
   align-items: center;
-  background-color: #43a047;
+  background-color: ${props => getColor(props.type)};
   font-size: 0.875rem;
   font-weight: 400;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -81,12 +79,17 @@ const ToastConent = styled.div`
 `
 
 const getColor = (type) => {
-  console.log('%ctype: ','color: MidnightBlue; background: Aquamarine;',type);
   switch(type){
     case 'success':
       return '#43a047';
+    case 'error':
+      return '#d32f2f';
+    case 'warning':
+      return '#ffa000';
+    case 'info':
+      return '#303f9f';
     default:
-      return 'red';
+      return '#43a047';
   }
 }
 
