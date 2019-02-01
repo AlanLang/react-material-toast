@@ -2,8 +2,9 @@
 [![NPM](https://nodei.co/npm/react-material-toast.png)](https://nodei.co/npm/react-material-toast/)
 
 ## 效果
-![](https://dada-image-bed.oss-cn-shenzhen.aliyuncs.com/20190201125142.png)
 [live demo]()
+
+![](https://dada-image-bed.oss-cn-shenzhen.aliyuncs.com/20190201125142.png)
 ## instalation
 using yarn 
 ```
