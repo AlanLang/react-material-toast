@@ -4,7 +4,8 @@ import ToastServive from '../../src';
 const toast = ToastServive.new({
   place:'topRight',
   duration:2,
-  maxCount:8
+  maxCount:8,
+  closable: true
 });
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
   }
   return (
     <div>
+      <h2>react-material-toast</h2>
       <button onClick={onClick} >success</button>
       <button onClick={onErrorClick} >error</button>
       <button onClick={onInfoClick} >info</button>

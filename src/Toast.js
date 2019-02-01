@@ -12,8 +12,7 @@ class Toast extends Component{
   }
   
   render(){
-    const { type, children } = this.props;
-
+    const { type, closable, children } = this.props;
     return (
       <ToastGroup>
         <ToastConent type={type}>
@@ -23,11 +22,11 @@ class Toast extends Component{
               {children}
             </MessageSpan>
           </Message>
-          <CloseContent>
+          {closable?<CloseContent onClick={this.props.onClose}>
             <ClostButton>
               <CloseIcon></CloseIcon>
             </ClostButton>
-          </CloseContent>
+          </CloseContent>:null}
         </ToastConent>
       </ToastGroup>
     )
@@ -36,6 +35,7 @@ class Toast extends Component{
 
 Toast.propTypes = {
   type: PropTypes.oneOf(['success', 'error', 'info', 'warning']),
+  closable: PropTypes.bool
 };
 
 export default Toast;
