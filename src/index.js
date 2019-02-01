@@ -5,10 +5,13 @@ import './index.css'
 
 const showToast = (notification,content,options,type) => {
   const key = guid();
-  const {duration, maxCount,} = options;
+  const {duration, maxCount, closable} = options;
+  const onClost = () => {
+    notification.component.remove(key)
+  }
   removeMax(notification,maxCount);
   notification.notice({
-    content: <Toast type={type}>{content}</Toast>,
+    content: <Toast type={type} closable={closable} onClose={onClost}>{content}</Toast>,
     key:key,
     duration:duration === 0?null:duration,
     onClose() {
@@ -33,7 +36,7 @@ const guid = () => {
 }
 
 export default {
-  new({ place = 'topLeft', maxCount = 8, duration=4 }){
+  new({ place = 'topLeft', maxCount = 8, duration = 4, closable = true }){
     if(['topLeft','topRight','bottomLeft','bottomRight'].findIndex(item=>item === place) < 0){
       console.warn(`react-material-toast: 无法识别的位置：${place}`)
       place = 'topLeft'
@@ -50,7 +53,7 @@ export default {
         }
       },
       _show(content,type,cb){
-        return showToast(this.notification,content,{maxCount,duration,cb},type);
+        return showToast(this.notification,content,{maxCount,duration,closable,cb},type);
       },
       success(content,cb) {
         return this._show(content,'success',cb);
