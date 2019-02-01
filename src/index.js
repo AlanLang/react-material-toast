@@ -7,7 +7,8 @@ const showToast = (notification,content,options,type) => {
   const key = guid();
   const {duration, maxCount, closable} = options;
   const onClost = () => {
-    notification.component.remove(key)
+    notification.component.remove(key);
+    if(options.cb){options.cb()}
   }
   removeMax(notification,maxCount);
   notification.notice({
