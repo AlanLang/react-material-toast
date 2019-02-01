@@ -19,7 +19,7 @@ class Toast extends Component{
           <Message>
             <MessageSpan>
               <TypeIcon type={type}></TypeIcon>
-              {children}
+              <MessageText>{children}</MessageText>
             </MessageSpan>
           </Message>
           {closable?<CloseContent onClick={this.props.onClose}>
@@ -94,6 +94,7 @@ const getColor = (type) => {
 }
 
 const Message = styled.div`
+  max-width:88%;
   padding: 8px 0;
 `
 const MessageSpan = styled.span`
@@ -101,11 +102,19 @@ const MessageSpan = styled.span`
   align-items: center;
   white-space: pre-line;
 `
+
+const MessageText = styled.div`
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; //需要显示的行数
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
 const CloseContent = styled.div`
   display: flex;
   align-items: center;
   margin-left: auto;
-  padding-left: 24px;
   margin-right: -8px;
 `
 

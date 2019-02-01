@@ -3,14 +3,14 @@ import { render} from 'react-dom';
 import ToastServive from '../../src';
 const toast = ToastServive.new({
   place:'topRight',
-  duration:2,
+  duration:0,
   maxCount:8,
   closable: true
 });
 
 const App = () => {
   const onClick = () => {
-    const id = toast.success('hello world',()=>{
+    const id = toast.success('helloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworld',()=>{
       console.log('closed')
     });
   }
