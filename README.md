@@ -2,8 +2,9 @@
 [![NPM](https://nodei.co/npm/react-material-toast.png)](https://nodei.co/npm/react-material-toast/)
 
 ## 效果
+[live demo](https://react-material-toast.netlify.com/)
+
 ![](https://dada-image-bed.oss-cn-shenzhen.aliyuncs.com/20190201125142.png)
-[live demo]()
 ## instalation
 using yarn 
 ```
@@ -14,6 +15,7 @@ using npm
 npm install --save react-material-toast
 ```
 ## usage
+[live demo](https://react-material-toast.netlify.com/)
 ```
 import React from 'react';
 import ToastServive from 'react-material-toast';
@@ -69,8 +71,11 @@ export default App;
 | closedCallBack | 关闭时的回调                           | function | - |
 
 ### 全局配置
+```
 const toast = ToastServive.new(props);
+```
 props details:
+
 | 参数  | 说明                                                         | 类型   | 默认值   |
 | ----- | ------------------------------------------------------------ | ------ | -------- |
 | place | 弹出位置，可选 ·`topLeft``topRight``bottomLeft``bottomRight` | string | topRight |
