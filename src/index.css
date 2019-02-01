@@ -1,4 +1,4 @@
-.rc-notification > span{
+.topRight-notification > span{
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -6,9 +6,61 @@
   z-index: 99999;
   top:0px;
 }
-@media (min-width: 960px) {
-  .rc-notification > span{
+@media (min-width: 860px) {
+  .topRight-notification > span{
     top: 24px;
+    left: auto;
+    right: 24px;
+    justify-content: flex-end;
+  }
+}
+
+
+.topLeft-notification > span{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 99999;
+  top:0px;
+}
+@media (min-width: 860px) {
+  .topLeft-notification > span{
+    top: 24px;
+    left: 24px;
+    right: auto;
+    justify-content: flex-end;
+  }
+}
+
+.bottomLeft-notification > span{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 99999;
+  bottom:0px;
+}
+@media (min-width: 860px) {
+  .bottomLeft-notification > span{
+    bottom: 24px;
+    left: 24px;
+    right: auto;
+    justify-content: flex-end;
+  }
+}
+
+.bottomRight-notification > span{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 99999;
+  bottom:0px;
+}
+@media (min-width: 860px) {
+  .bottomRight-notification > span{
+    bottom: 24px;
     left: auto;
     right: 24px;
     justify-content: flex-end;
