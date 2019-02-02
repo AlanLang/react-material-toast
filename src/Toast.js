@@ -83,7 +83,7 @@ const ToastConent = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    left: 100%;
+    left: 0;
     background: #fff;
     border-radius: 3px;
     animation: animate-shine ${props => getTimes(props.duration)} ease-out infinite;
@@ -91,8 +91,8 @@ const ToastConent = styled.div`
   }
   @keyframes animate-shine
   {
-    from {left:0;}
-    to {left:100%;}
+    from {right:100%;}
+    to {right:0;}
   }
 `
 const getTimes = (duration) => {
