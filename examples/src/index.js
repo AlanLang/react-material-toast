@@ -3,7 +3,7 @@ import { render} from 'react-dom';
 import ToastServive from '../../src';
 const toast = ToastServive.new({
   place:'topRight',
-  duration:0,
+  duration:4,
   maxCount:8,
   closable: true
 });

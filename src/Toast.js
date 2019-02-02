@@ -12,10 +12,10 @@ class Toast extends Component{
   }
   
   render(){
-    const { type, closable, children } = this.props;
+    const { type, closable, duration, children } = this.props;
     return (
       <ToastGroup>
-        <ToastConent type={type}>
+        <ToastConent type={type} duration={duration}>
           <Message>
             <MessageSpan>
               <TypeIcon type={type}></TypeIcon>
@@ -76,8 +76,28 @@ const ToastConent = styled.div`
   @media (max-width: 959.95px){
     flex-grow: 1;
   }
+  &::after{
+    content: '';
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 100%;
+    background: #fff;
+    border-radius: 3px;
+    animation: animate-shine ${props => getTimes(props.duration)} ease-out infinite;
+    animation-iteration-count:1;
+  }
+  @keyframes animate-shine
+  {
+    from {left:0;}
+    to {left:100%;}
+  }
 `
-
+const getTimes = (duration) => {
+  return (duration+0.5)+'s';
+}
 const getColor = (type) => {
   switch(type){
     case 'success':

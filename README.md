@@ -67,7 +67,6 @@ export default App;
 | 参数  | 说明                                                         | 类型   | 默认值   |
 | ----- | ------------------------------------------------------------ | ------ | -------- |
 | content | 消息内容 | string | topRight |
-| maxCount | 同一时间可展示的最大提示数量                              | number | - |
 | closedCallBack | 关闭时的回调                           | function | - |
 
 ### 全局配置
@@ -78,7 +77,7 @@ props details:
 
 | 参数  | 说明                                                         | 类型   | 默认值   |
 | ----- | ------------------------------------------------------------ | ------ | -------- |
-| place | 弹出位置，可选 ·`topLeft``topRight``bottomLeft``bottomRight` | string | topRight |
+| place | 弹出位置，可选 `topLeft` `topRight` `bottomLeft` `bottomRight` | string | topRight |
 | maxCount | 同一时间可展示的最大提示数量                              | number | 8 |
 | duration | 持续时间(秒)，当设置为0时不消失                           | number | 4 |
 | closable | 是否允许手动关闭                                        | Boolean | true |

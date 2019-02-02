@@ -12,7 +12,7 @@ const showToast = (notification,content,options,type) => {
   }
   removeMax(notification,maxCount);
   notification.notice({
-    content: <Toast type={type} closable={closable} onClose={onClost}>{content}</Toast>,
+    content: <Toast type={type} closable={closable} onClose={onClost} duration={duration}>{content}</Toast>,
     key:key,
     duration:duration === 0?null:duration,
     onClose() {

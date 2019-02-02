@@ -1,5 +1,8 @@
 src
 examples
+build
+yarn.lock
+package-lock.json
 .babelrc
 .gitignore
 webpack.config.js
